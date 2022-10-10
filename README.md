@@ -1,2 +1,2 @@
-# Storefront-Backend
-Udacity project
+# Storefront Backend
+Full Stack JavaScript Developer Nanodegree Project 
