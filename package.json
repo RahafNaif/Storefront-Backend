@@ -7,7 +7,9 @@
     "start": "node src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
     "test": "jasmine-ts",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "migrate": "db-migrate up",
+    "migrate:fresh": "db-migrate reset"
   },
   "author": "Rahaf",
   "license": "ISC",
