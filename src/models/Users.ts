@@ -12,9 +12,7 @@ export type User = {
 }
 
 export class Users {
-
     
-
     async index(): Promise<User[]> {
         try {
             const conn = await client.connect();
