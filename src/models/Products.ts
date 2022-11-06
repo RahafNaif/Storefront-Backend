@@ -19,7 +19,7 @@ export class Products {
             return result.rows;
 
         } catch (err){
-            throw new Error(`Could not get users. Error: ${err}`)
+            throw new Error(`Could not get products. Error: ${err}`)
         }
     }
 
@@ -33,7 +33,7 @@ export class Products {
             conn.release();
             return result.rows[0];
         } catch (err){
-            throw new Error(`Could not get User ${id}. Error: ${err}`);
+            throw new Error(`Could not get product ${id}. Error: ${err}`);
         }
     }
 
@@ -47,7 +47,7 @@ export class Products {
             conn.release();
             return result.rows[0];
         } catch (err){
-            throw new Error(`Could not get User ${p.name}. Error: ${err}`);
+            throw new Error(`Could not create product ${p.name}. Error: ${err}`);
         }
     }
 
