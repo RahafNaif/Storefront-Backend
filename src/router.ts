@@ -1,4 +1,5 @@
 import express, { Response, Router } from "express";
+import ordersRoutes from "./controller/OrderController";
 import productsRoutes from "./controller/ProductController";
 import usersRoutes from "./controller/UserController";
 
@@ -9,6 +10,7 @@ router.get("/", (req: express.Request, res: express.Response): void => {
 });
 
 usersRoutes(router);
+ordersRoutes(router);
 productsRoutes(router);
 
 export default router;
