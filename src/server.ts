@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv";
-import usersRoutes from './controller/UserController';
+import router from './router';
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
-usersRoutes(app);
+app.use("/api", router);
 
 app.listen(port, function () {
     console.log(`starting app on: ${port}`);

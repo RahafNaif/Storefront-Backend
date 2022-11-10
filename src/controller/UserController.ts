@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import { User, UserReturnType, Users } from "../models/Users";
+import { User, Users } from "../models/Users";
 
 const users: Users = new Users();
 
@@ -51,18 +51,18 @@ const show = async (req: express.Request, res: express.Response) => {
     }
     
     try{
-        const all_users = await users.show(req.body.id);
-        res.json(all_users);
+        const user = await users.show(req.body.id);
+        res.json(user);
     }catch(err){
         res.status(400);
         res.json(err);
     }
 }
 
-const usersRoutes = (app: express.Application) => {
-    app.get('/users', index);
-    app.get('/users/:id', show);
-    app.post('/users', create)
+const usersRoutes = (router: express.Router) => {
+    router.get('/users', index);
+    router.get('/users/:id', show);
+    router.post('/users', create)
 }
 
 export default usersRoutes;

@@ -6,6 +6,11 @@ export type Product = {
     price: string;
 }
 
+export type ProductReturnType = {
+    name: string;
+    price: string;
+}
+
 export class Products {
     
     async index(): Promise<Product[]> {
@@ -37,7 +42,7 @@ export class Products {
         }
     }
 
-    async create(p: Product): Promise<Product> {
+    async create(p: ProductReturnType): Promise<ProductReturnType> {
         try {
             const conn = await client.connect();
             const sql = 'INSERT INTO Product (name, price) VALUES($1, $2) RETURNING *';
